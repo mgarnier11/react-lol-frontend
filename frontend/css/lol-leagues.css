@@ -1,0 +1,12 @@
+.lol-leagues-map {
+    background-image: url('../images/lol-leagues.png'); 
+    background-size: 100%;
+    position: relative;
+}
+.lol-league-unranked {background-position: 0.000% 0.000%}.lol-league-bronze-i {background-position: 0.000% 3.704%}.lol-league-bronze-ii {background-position: 0.000% 7.407%}.lol-league-bronze-iii {background-position: 0.000% 11.111%}.lol-league-bronze-iv {background-position: 0.000% 14.815%}.lol-league-bronze-v {background-position: 0.000% 18.519%}.lol-league-silver-i {background-position: 0.000% 22.222%}.lol-league-silver-ii {background-position: 0.000% 25.926%}.lol-league-silver-iii {background-position: 0.000% 29.630%}.lol-league-silver-iv {background-position: 0.000% 33.333%}.lol-league-silver-v {background-position: 0.000% 37.037%}.lol-league-gold-i {background-position: 0.000% 40.741%}.lol-league-gold-ii {background-position: 0.000% 44.444%}.lol-league-gold-iii {background-position: 0.000% 48.148%}.lol-league-gold-iv {background-position: 0.000% 51.852%}.lol-league-gold-v {background-position: 0.000% 55.556%}.lol-league-platinum-i {background-position: 0.000% 59.259%}.lol-league-platinum-ii {background-position: 0.000% 62.963%}.lol-league-platinum-iii {background-position: 0.000% 66.667%}.lol-league-platinum-iv {background-position: 0.000% 70.370%}.lol-league-platinum-v {background-position: 0.000% 74.074%}.lol-league-diamond-i {background-position: 0.000% 77.778%}.lol-league-diamond-ii {background-position: 0.000% 81.481%}.lol-league-diamond-iii {background-position: 0.000% 85.185%}.lol-league-diamond-iv {background-position: 0.000% 88.889%}.lol-league-diamond-v {background-position: 0.000% 92.593%}.lol-league-master-i {background-position: 0.000% 96.296%}.lol-league-challenger-i {background-position: 0.000% 100.000%}
+
+.lol-leagues-map span {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+}

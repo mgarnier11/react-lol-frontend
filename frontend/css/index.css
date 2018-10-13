@@ -1,0 +1,581 @@
+html {
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
+hr {
+    border-color: black;
+}
+
+body {
+    padding-top: 55px;
+    line-height: 1.3;
+}
+
+.error {
+    padding: 50px;
+    text-align: center;
+}
+
+.headerNavbar {
+}
+
+.toolTip {
+    text-align: center;
+    height: initial !important;
+    width: initial !important;
+}
+
+.percentCircle{
+    position: relative;
+    padding: 2px;
+    height: 100%;
+}
+.percentCircle span {
+    text-align:center;
+    width: 100%;
+    position: absolute;
+    top: 33%;
+    user-select: none;
+    left: 0;
+}
+.percentCircle svg {
+    width: calc(100% - 0px);
+    height: calc(100% - 0px);
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.activeMatch div {
+    border-radius: 5px;
+}
+
+.activeMatch .bottom {
+    /*display: table-cell;*/
+    vertical-align: bottom;
+}
+
+.activeMatch .top {
+    /*display: table-cell;*/
+    vertical-align: top;
+}
+
+.teamParticipants {
+    height: 400px;
+}
+
+.teamParticipants > div {
+    border-radius: 0;
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: olive;
+        color: white;
+    }
+}
+
+
+.teamInfos{
+    border-radius: 0 !important;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 35px;
+}
+
+.teamInfos > div {
+    margin-right: 2px;
+    margin-left: 2px;
+    float: left;
+}
+
+.teamInfos .queuesButtons {
+    width: 366px;
+    height: 100%;
+}
+
+.teamInfos .queuesButtons button {
+    height: 100%;
+    width:  calc(33.3333% - 4px);
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.teamInfos .matchStatsDiv {
+    width: calc(32.24% + 8px);
+
+    height: 100%;
+}
+
+.teamInfos .teamStatsDiv {
+    width: 28%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+.summonerRow {
+    height: 20%;
+    float: none;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+}
+.summonerRow:hover {
+    background-color: #F7F7F7;
+}
+
+.summonerRow > div {
+    margin-right: 2px;
+    margin-left: 2px;
+    float: left;
+}
+
+
+
+
+
+.summonerRow .championDiv {
+    width: 38px;
+    float: left;
+    
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+}
+.summonerRow .champion {
+    height: 100%;
+    text-align: center;
+}
+
+.summonerRow .champion img {
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.summonerRow .champion .icon {
+    height: 36px;
+}
+
+
+
+
+
+
+.summonerRow .perksDiv {
+    width: 70px;
+    height: 100%;    
+}
+
+.summonerRow .perks {
+    height: 100%;
+    width: 100%;
+}
+.summonerRow .summonerPerks {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+.summonerRow .summonerPerks > div {
+    height: calc(50% - 1px);
+    width: calc(100% - 1px);
+    margin-bottom: 2px;
+    
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+}
+
+
+
+
+
+
+.summonerRow .summonerInfosDiv {
+    width: 250px;
+    height: 100%;    
+}
+.summonerRow .summonerBasicInfos {
+    height: 100%;
+}
+.summonerRow .summonerBasicInfos .summonerName {
+    height: calc(50% - 1px);
+    font-size: 20px;;
+    padding-left: 2px;
+    text-align: left;
+    margin-bottom: 2px;
+    
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+}
+.summonerRow .summonerBasicInfos .summonerName span {
+    height: 100%;
+}
+
+.summonerRow .summonerBasicInfos .summonerName img {
+    width: 29px;
+    height: calc(100% - 2px);
+    margin-right: 5px;
+    margin-bottom: 1px;
+    border-radius: 5px;
+}
+.summonerRow .summonerBasicInfos .champions {
+    height: 50%;
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+}
+.summonerRow .summonerBasicInfos .bestChampions{
+    height: 100%;
+    width: 130px;
+    border-radius: 5px;
+    float: left;
+}
+.summonerRow .summonerBasicInfos .bestChampions .bestChampion {
+    float: left;
+    margin: 1px;
+    border: 1px solid #b6bfc9;
+    height: calc(100% - 2px);
+    width: calc(25% - 2px);
+}
+.summonerRow .summonerBasicInfos .bestChampions .actualChampion {
+    border: 1px solid #ffa900;
+}
+.summonerRow .summonerBasicInfos .bannedChampion {
+    float: right;
+    height: 100%;
+    width: 13.7%;
+    border-radius: 5px;
+}
+.summonerRow .summonerBasicInfos .bannedChampion .icon {
+    height: 100%;
+    width: 100%;
+    border:1px solid #d60000;
+}
+
+
+
+
+
+
+ .summonerRow .summonerQueuesDiv {
+    width: 400px;
+    height: 100%;    
+}
+.summonerRow .summonerQueue {
+    width: 100%;
+    height: 100%; 
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+}
+
+.summonerRow .summonerQueue div {
+    height: 100%;
+    width: 100%;
+}
+
+.summonerRow .summonerQueue > div {
+    float: left;
+}
+
+.summonerRow .summonerQueue .side{
+    width: 17%;
+}
+.summonerRow .summonerQueue .center {
+    width: 66%;
+    border-right: 1px solid #b6bfc9;
+    border-left: 1px solid #b6bfc9;
+    border-radius: 0;
+}
+
+.summonerRow .summonerQueue .queueText div {
+    height: calc(33.3333%);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.summonerRow .summonerQueue .leagueName {
+    text-align: center;
+}
+
+.summonerRow .summonerQueue .queueName {
+    text-align: right;
+}
+@media screen and (max-width: 991px) {
+    .summonerRow .summonerQueuesDiv {
+        width: 316px;
+    }
+
+    .summonerRow .summonerQueue .side{
+        width: 22%;
+    }
+
+    .summonerRow .summonerQueue .center {
+        width: 56%;
+        border-right: 1px solid #b6bfc9;
+        border-left: 1px solid #b6bfc9;
+        border-radius: 0;
+    }
+}
+
+
+
+
+
+
+
+.summonerRow .summonerStatsDiv {
+    width: 29.9%;
+    height: 100%;    
+}
+.summonerRow .summonerStats {
+    height: 100%;
+    width: 100%;
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+}
+
+.summonerRow .summonerStats .winRate {
+    width: 20.5%;
+    height: 100%;
+    float: left;
+}
+
+.summonerRow .summonerStats .kdas {
+    float: left;
+    width: 59%;
+    height: 100%;
+    border-right: 1px solid #b6bfc9;
+    border-left: 1px solid #b6bfc9;
+    border-radius: 0;
+}
+
+.summonerRow .summonerStats .kda {
+    height: 50%;
+    user-select: none;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+.summonerRow .summonerStats .kda span {
+    background-color: rgb(45, 183, 245);
+    border: 1px solid #b6bfc9;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.summonerRow .summonerStats .kda:nth-child(odd) {
+    border-radius: 0;
+    border-bottom: 1px solid #b6bfc9;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 991px) {
+    .summonerRow .summonerStatsDiv {
+        width: 152px;
+    }
+
+    .summonerRow .summonerStatsDiv .winRate{
+        display: none !important;
+    }
+
+    .summonerRow .summonerStatsDiv .kdas{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 991px) {
+    .summonerRow .summonerStatsDiv {
+        display: none;  
+    }
+}
+
+
+
+
+
+
+.summonerCard {
+    height: calc(100% - 40px);
+    width: calc(20% - 4px);
+    margin-left: 2px;
+    margin-right: 2px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: left;
+    background-color: black;
+    border: 1px solid;
+}
+
+
+
+
+
+
+
+.team100 {
+    border-color: blue;
+}
+
+.team200 {
+    border-color: red;
+}
+
+.switchButton{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin: 5px;
+    float: left; 
+}
+
+.activeMatch .matchInfos {
+    float: left;
+    width: calc(100% - 66px);
+    height: 30px;;
+    font-size: 20px;
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.matchInfos span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+
+.headerForm .form-control {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+
+.recentMatches .matchInfos {
+    font-size: 20px;
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+    border-radius: 5px;
+    width: 100%;
+    clear: both;
+}
+
+.recentMatches {
+    width: 100%;
+}
+
+.recentMatch {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.matchInfos .gameTime {
+    float: right;
+}
+.recentMatch .newTeam {
+    clear: left;
+}
+
+.recentMatch .summoner{
+    width: calc(20% - 10px);
+    height: 60.5px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #f0f2f4;
+    border: 1px solid #b6bfc9;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.recentMatch .summoner img {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #b6bfc9;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.recentMatch .summoner .summonerName {
+    margin-top: 10px;
+    padding-left: 2px;
+    font-size: 18px;
+    float: left;
+}
+
+.recentMatch .summoner .icon {
+    width: 48px;
+    height: 48px;
+    float: left;
+}
+
+.recentMatch a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.championStats {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.championStats .championIcon {
+    width: 11%;
+    width: calc(100% / 9);
+    height: 125px;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.championStats .championIcon img {
+    width: 100%;
+    border: 1px solid #b6bfc9;
+}
+
+.championStats .search {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.championStats .search .btn {
+    float: right;
+    width: calc(10% - 10px);
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.championStats .search .searchText {
+    float: right;
+    width: 40%;
+}
