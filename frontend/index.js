@@ -8,6 +8,9 @@ function importAll(r) {
     return datas;
 }
 
+const images = importAll(require.context('./images/masteries', false, /\.(png|jpe?g|svg)$/));
+const styles = importAll(require.context('./css', false, /\.css$/));
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 

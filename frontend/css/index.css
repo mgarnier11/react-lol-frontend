@@ -469,6 +469,17 @@ body {
     margin-right: 2px;
 }
 
+.headerForm .headerDropdown {
+    display: inline-block;
+}
+
+.headerForm .headerDropdown > div{
+    width: 90px;
+}
+
+
+
+
 
 
 .recentMatches .matchInfos {

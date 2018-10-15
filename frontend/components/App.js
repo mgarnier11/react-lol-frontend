@@ -8,22 +8,44 @@ import RecentGames from './RecentGames/RecentGames';
 import ChampionsStats from './ChampionStats/ChampionsStats';
 import Champion from './ChampionStats/Champion';
 
-import config from '../../config';
+const regions = [
+    'euw',
+    'eune',
+    'tr',
+    'ru',
+    'na',
+    'br',
+    'lan',
+    'las',
+    'kr',
+    'jp',
+    'oce'
+]
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            region: 'euw'
+        };
 
-        this.socket = io('http://localhost:' + config.servers.EUW.port);
-        this.socket.server = config.servers.EUW;
-        window.server = config.servers.EUW;
+        this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost', { reconnection: false });
+        this.onRegionChange = this.onRegionChange.bind(this);
+        //this.socket.server = config.servers.EUW;
+        //window.server = config.servers.EUW;
+    }
+
+    onRegionChange(region) {
+        this.setState({ region: region }, () => {
+            this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost', { reconnection: false });
+        });
+
     }
 
     render() {
         return (
             <div className="container">
-                <Header />
+                <Header onRegionChange={this.onRegionChange} regions={regions} region={this.state.region} />
                 <Route path='/game/:summonerName' render={(props) => <Game socket={this.socket} summonerName={props.match.params.summonerName} />} />
                 <Route path='/recentGames' render={(props) => <RecentGames socket={this.socket} />} />
                 <Route path='/champions/:championKey' render={(props) => <Champion socket={this.socket} championKey={props.match.params.championKey} />} />

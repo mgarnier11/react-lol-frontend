@@ -5,8 +5,6 @@ import Switch from "react-switch";
 
 import Team from '../../../classes/Team';
 
-import config from '../../../config.js';
-
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 import TeamRow from './Row/TeamRow';
