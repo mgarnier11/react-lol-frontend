@@ -26,7 +26,7 @@ class SummonerBasicInfos extends Component {
     }
 
     renderSummonerIcon(participant) {
-        if (participant) if (participant.profileIconId) return (<img src={'http://localhost:' + window.server.port + '/summoners/icons/' + participant.profileIconId + '.jpg'}></img>);
+        if (participant) if (participant.profileIconId) return (<img src={window.backendUrl + '/summoners/icons/' + participant.profileIconId + '.jpg'}></img>);
     }
 
     renderSummonerName(participant) {

@@ -37,7 +37,7 @@ class Champion extends Component {
         return (
             <div className="championIcon">
                 <Link to={'/champions/' + champion.id}>
-                    <img src={'http://localhost:' + window.server.port + champion.icon}>
+                    <img src={window.backendUrl + champion.icon}>
                     </img>
                 </Link>
                 {champion.name}

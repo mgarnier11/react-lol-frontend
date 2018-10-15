@@ -28,16 +28,16 @@ class App extends Component {
         this.state = {
             region: 'euw'
         };
+        this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost.com', { reconnection: false });
+        window.backendUrl = 'http://' + this.state.region + '.backend.reactlol.localhost.com';
 
-        this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost', { reconnection: false });
         this.onRegionChange = this.onRegionChange.bind(this);
-        //this.socket.server = config.servers.EUW;
-        //window.server = config.servers.EUW;
     }
 
     onRegionChange(region) {
         this.setState({ region: region }, () => {
-            this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost', { reconnection: false });
+            this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost.com', { reconnection: false });
+            window.backendUrl = 'http://' + this.state.region + '.backend.reactlol.localhost.com';
         });
 
     }
