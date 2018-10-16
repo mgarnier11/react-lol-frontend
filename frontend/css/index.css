@@ -475,6 +475,7 @@ body {
 
 .headerForm .headerDropdown > div{
     width: 90px;
+    border-radius: 5px;
 }
 
 

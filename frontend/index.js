@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { CookiesProvider } from 'react-cookie';
+
 
 function importAll(r) {
     let datas = {};
@@ -26,7 +28,9 @@ console.instantLog = function (obj) {
 
 ReactDOM.render((
     <BrowserRouter>
-        <App />
+        <CookiesProvider>
+            <App />
+        </CookiesProvider>
     </BrowserRouter>
 ), document.getElementById('app'));
 

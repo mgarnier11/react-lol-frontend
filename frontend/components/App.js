@@ -1,5 +1,8 @@
 import React from 'react'
 import { Component } from 'react';
+import { withCookies, Cookies } from 'react-cookie';
+import { instanceOf } from 'prop-types';
+
 import Header from './Header'
 import { Route } from 'react-router-dom'
 import io from 'socket.io-client';
@@ -23,10 +26,17 @@ const regions = [
 ]
 
 class App extends Component {
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+
     constructor(props) {
         super(props);
+
+        const { cookies } = props;
+
         this.state = {
-            region: 'euw'
+            region: cookies.get('region') || 'euw'
         };
         this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost.com', { reconnection: false });
         window.backendUrl = 'http://' + this.state.region + '.backend.reactlol.localhost.com';
@@ -35,6 +45,10 @@ class App extends Component {
     }
 
     onRegionChange(region) {
+        const { cookies } = this.props;
+
+        cookies.set('region', region, { path: '/' });
+
         this.setState({ region: region }, () => {
             this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost.com', { reconnection: false });
             window.backendUrl = 'http://' + this.state.region + '.backend.reactlol.localhost.com';
@@ -55,4 +69,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withCookies(App);

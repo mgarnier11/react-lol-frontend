@@ -45,7 +45,6 @@ class RecentGames extends Component {
     }
 
     renderMatches(matches) {
-        console.log(matches);
         if (matches) {
             return (matches.map(match => { return this.renderMatch(match) }))
         }
