@@ -25,6 +25,8 @@ const regions = [
     'oce'
 ]
 
+var herokuBackend = 'https://react-lol-backend.herokuapp.com';
+
 class App extends Component {
     static propTypes = {
         cookies: instanceOf(Cookies).isRequired
@@ -38,8 +40,8 @@ class App extends Component {
         this.state = {
             region: cookies.get('region') || 'euw'
         };
-        this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost.com', { reconnection: false });
-        window.backendUrl = 'http://' + this.state.region + '.backend.reactlol.localhost.com';
+        this.socket = io(herokuBackend, { reconnection: false });
+        window.backendUrl = herokuBackend;
 
         this.onRegionChange = this.onRegionChange.bind(this);
     }
@@ -50,8 +52,8 @@ class App extends Component {
         cookies.set('region', region, { path: '/' });
 
         this.setState({ region: region }, () => {
-            this.socket = io('http://' + this.state.region + '.backend.reactlol.localhost.com', { reconnection: false });
-            window.backendUrl = 'http://' + this.state.region + '.backend.reactlol.localhost.com';
+            this.socket = io(herokuBackend, { reconnection: false });
+            window.backendUrl = herokuBackend;
         });
 
     }

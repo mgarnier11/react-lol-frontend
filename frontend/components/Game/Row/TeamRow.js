@@ -40,7 +40,7 @@ class TeamRow extends Component {
             return (
                 <div className={'teamParticipants ' + this.state.teamRowPlace} style={{ height: participants.length * 80 }}>
                     {participants.map(participant => {
-                        return (<SummonerRow participant={participant} queueIdDisplayed={this.state.queueIdDisplayed} key={'participant' + participant.summonerId} />);
+                        return (<SummonerRow participant={participant} queueIdDisplayed={this.state.queueIdDisplayed} key={'participant' + participant.summonerId} style={{ height: (100 / participants.length) + '%' }} />);
                     })}
                 </div>
             )

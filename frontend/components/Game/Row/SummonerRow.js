@@ -33,7 +33,7 @@ class SummonerRow extends Component {
 
     render() {
         return (
-            <div className={'team' + this.state.participant.teamId + ' summonerRow'}>
+            <div className={'team' + this.state.participant.teamId + ' summonerRow'} style={this.props.style}>
                 <div className="championDiv">
                     <Champion champion={this.state.participant.champion} method={'ChampionIconMasterie'} />
                 </div>
