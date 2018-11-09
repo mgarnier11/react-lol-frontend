@@ -26,6 +26,7 @@ const regions = [
 ]
 
 var herokuBackend = 'https://react-lol-backend.herokuapp.com';
+herokuBackend = 'http://localhost:3000';
 
 class App extends Component {
     static propTypes = {

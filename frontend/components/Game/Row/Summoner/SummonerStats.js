@@ -14,40 +14,48 @@ class SummonerStats extends Component {
             globalWinRate: undefined,
             globalKda: undefined,
             queueWinRate: undefined,
-            queueKda: undefined
+            queueKda: undefined,
+            percent: 0
         }
     }
 
     componentWillReceiveProps(nextProps) {
+        if (nextProps.percent) {
+            this.setState({ percent: nextProps.percent });
+        }
+
         var queueWinRate, queueKda = undefined;
         var queue = nextProps.queueDisplayed;
-        if (nextProps.queueDisplayed) {
-            if (this.state.summoner) if (this.state.summoner[queue.id]) {
-                queueWinRate = this.state.summoner[queue.id].winRate;
-                queueKda = this.state.summoner[queue.id].kda;
+        if (queue) {
+            if (nextProps.queueDisplayed) {
+                if (this.state.summoner) if (this.state.summoner[queue.id]) {
+                    queueWinRate = this.state.summoner[queue.id].winRate;
+                    queueKda = this.state.summoner[queue.id].kda;
+                }
+                this.setState({
+                    queueDisplayed: queue,
+                    queueWinRate: queueWinRate,
+                    queueKda: queueKda
+                });
+            } else queue = this.state.queueDisplayed;
+
+            if (nextProps.summoner) {
+                if (nextProps.summoner[queue.id]) {
+                    queueWinRate = nextProps.summoner[queue.id].winRate;
+                    queueKda = nextProps.summoner[queue.id].kda;
+                } else queueWinRate, queueKda = undefined;
+
+                this.setState({
+                    summoner: nextProps.summoner,
+                    globalWinRate: nextProps.summoner.winRate,
+                    globalKda: nextProps.summoner.kda,
+
+                    queueWinRate: queueWinRate,
+                    queueKda: queueKda,
+                });
             }
-            this.setState({
-                queueDisplayed: queue,
-                queueWinRate: queueWinRate,
-                queueKda: queueKda
-            });
-        } else queue = this.state.queueDisplayed;
-
-        if (nextProps.summoner) {
-            if (nextProps.summoner[queue.id]) {
-                queueWinRate = nextProps.summoner[queue.id].winRate;
-                queueKda = nextProps.summoner[queue.id].kda;
-            } else queueWinRate, queueKda = undefined;
-
-            this.setState({
-                summoner: nextProps.summoner,
-                globalWinRate: nextProps.summoner.winRate,
-                globalKda: nextProps.summoner.kda,
-
-                queueWinRate: queueWinRate,
-                queueKda: queueKda
-            });
         }
+
     }
 
     render() {
@@ -69,7 +77,7 @@ class SummonerStats extends Component {
         } else {
             return (
                 <div className="summonerStats">
-
+                    {Utils.renderBar(this.state.percent)}
                 </div>
             )
         }
@@ -82,7 +90,7 @@ class SummonerStats extends Component {
                     {summoner.name} on {summoner.champion.name} <br />
                     {queue.named}<br />
                     {(summoner[queue.id] ?
-                        summoner[queue.id].matchList.length + ' games ' + Math.round(summoner[queue.id].winRate) + '% wr' :
+                        (summoner[queue.id].matchList ? summoner[queue.id].matchList.length : 0) + ' games ' + Math.round(summoner[queue.id].winRate) + '% wr' :
                         summoner.nbGames + ' games ' + Math.round(summoner.winRate) + '% wr')}
                 </span>
             )
@@ -100,14 +108,15 @@ class SummonerStats extends Component {
     kdaToolTip(summoner, queue = undefined) {
         if (queue) {
             if (summoner[queue.id]) {
-
-                return (
-                    <span>
-                        {summoner.name} on {summoner.champion.name} <br />
-                        {queue.named}<br />
-                        {summoner[queue.id].matchList.length + ' games '}{this.advancedKda(summoner[queue.id].kda)}
-                    </span>
-                )
+                if (summoner[queue.id].matchList) {
+                    return (
+                        <span>
+                            {summoner.name} on {summoner.champion.name} <br />
+                            {queue.named}<br />
+                            {summoner[queue.id].matchList.length + ' games '}{this.advancedKda(summoner[queue.id].kda)}
+                        </span>
+                    )
+                }
             }
         } else {
             return (

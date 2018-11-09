@@ -47,7 +47,7 @@ class SummonerRow extends Component {
                     <SummonerQueues queues={this.state.participant.queues} queueIdDisplayed={this.state.queueIdDisplayed} />
                 </div>
                 <div className="summonerStatsDiv">
-                    <SummonerStats summoner={this.state.participant.summoner} queueDisplayed={this.state.queueDisplayed} />
+                    <SummonerStats summoner={this.state.participant.summoner} queueDisplayed={this.state.queueDisplayed} percent={this.state.participant.loading} />
                 </div>
             </div >
         )
