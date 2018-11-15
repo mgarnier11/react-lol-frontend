@@ -64,6 +64,7 @@ class Game extends Component {
         this.socket.off('returnParticipant');
         this.socket.off('returnSummonerStats');
         this.socket.off('returnError');
+        this.socket.off('returnSummonerLoading');
     }
 
     componentDidMount() {
@@ -115,15 +116,15 @@ class Game extends Component {
 
             this.setStateParticipant(participant);
         });
-
-        this.socket.on('returnSummonerLoading', (datas) => {
-            var participant = this.findParticipantInTeams(datas.summonerId);
-
-            participant.loading = datas.loading;
-
-            this.setStateParticipant(participant);
-        });
-
+        /*
+                this.socket.on('returnSummonerLoading', (datas) => {
+                    var participant = this.findParticipantInTeams(datas.summonerId);
+        
+                    participant.loading = datas.loading;
+        
+                    this.setStateParticipant(participant);
+                });
+        */
         this.socket.on('returnError', (error) => {
             this.setState({ match: null, error: error });
         });
